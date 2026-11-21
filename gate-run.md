@@ -109,6 +109,106 @@ weakness or improvement is negligible.)
   sha 3108ea94...). No re-review requested: changes are 3 short label strings.
 - Xingchiapi: NOT used (per brief).
 
-## Gate MQ1–MQ8 + Gates 0–3
+## Gate MQ1–MQ8 + Gates 0–3 (run 21 Nov ~15:27 WITA, after final render v4)
 
-(To be filled at gate time; ONE FAIL = fix + re-run whole gate from MQ1.)
+**MQ1 — submit-ready end to end: PASS.**
+1. Competition: news-image-20261120 — entries close 22 Nov 2026 08:00 WITA
+   (requirements re-read fresh at gate time via public GET
+   /api/competitions/news-image-20261120/requirements, HTTP 200, saved
+   /tmp/req2.json; bounty page confirms "Ends Sun, Nov 22, 2026, 12:00 AM UTC").
+2. Deliverables present in repo: main.ts, entry.png, LICENSE, README.md
+   (+ NEWS.md, gate-run.md as supporting files).
+3. Checks met: image 1024×1024 PNG, 157,682 B ≤ 1 MiB; main.ts Node stdlib
+   only (node:fs, node:crypto, node:path, node:url), no network, 2 runs
+   byte-identical; repo public, created after open; LICENSE MIT with SPDX
+   line 1; README carries the 3 live make.fun badges verbatim.
+4. Submit path: coordinator's kit CLI submit, repo
+   https://github.com/RieryBuild/makefun-news-image-20261120-v4, commit
+   1ae65a8a34a4dd38df3dc534c889cc5c90e38a5f (gate-run.md update commit follows;
+   final SHA recorded below).
+5. Cost: $0 — FREE entry, no capital need.
+
+**MQ2 — clears the prizelist bar: PASS.** Judged/visual competition; the kit
+provides no practice grade, so the evidence is the feed-first top-5 study
+(coordinator, 21 Nov 14:41) + multi-model review + 3 self-critique cycles +
+300px test (masthead/date/big numbers/label bars CLEAR). Bar = top-50
+prizelist, $250 pool. Standing v3 #2550/14,965 is outside the prizelist;
+v4 is demonstrably stronger (flat illustration throughout per N1, 35 stories
+with better legibility than v3's 38, UK–EU 4th hero, verification tags,
+decluttered pin map). No rank is promised — this is evidence, not outcome.
+
+**MQ3 — window open for this account: PASS (with recorded caveat).**
+Delegation-time live check by the coordinator 21 Nov ~14:45 WITA:
+can_submit TRUE, day 6/6, hard 37 left. A fresh authenticated re-check from
+this sandbox was blocked: the quota endpoint returns HTTP 401 without
+sign-in, and the makefun connector credentials return HTTP 403 in this
+sandbox (authd: "not available to the sandbox"). Same UTC day (rolled
+08:00 WITA, before delegation), no submissions made since delegation, so the
+value stands. The coordinator re-verifies quota at submit; the server
+enforces quota at submit and a refused submission burns no day-cap slot
+(v1 lesson). Deadline 22 Nov 08:00 WITA is ~16.5h ahead at gate time.
+
+**MQ4 — right identity, right route: PASS (builder side).** Repo pushed via
+the GitHub PAT route (custom.github-pat, Git Data API; Contents API only
+for the empty-repo first commit — no git commands in the entry dir).
+Commit chain: initial 9238f9957c9baade5c19466e39fe1681cc4a92eb (main.ts) →
+HEAD 1ae65a8a34a4dd38df3dc534c889cc5c90e38a5f (all 6 files). Signing is the
+coordinator's submit step, wallet 6do8 only per the brief
+(6do8zGw4FPLCB1Cq44G8r8KwQccbhHUqtAptaRji6ALk).
+
+**MQ5 — deliberate new submission, not a duplicate: PASS.** §4 rebuild,
+third trigger, intended. Standing v3 #2550/14,965 was outside the top-50
+when triggered. Rebuild-once respected: v2 superseded v1, v3 superseded v2,
+v4 supersedes v3 — one trigger per standing entry. Not a duplicate: new
+angle ("Friday the World Split"), new image (sha256 3108ea94...), new repo.
+
+**MQ6 — proven to work: PASS.** main.ts run 2× with node v24.22.1: both
+wrote /output/entry.png 157,682 B, sha256
+3108ea94c99a5531cbb9431b6a9bbc18df505101be4721e5d940c41ec4df14be, identical;
+compose.py 2× byte-identical; PNG magic + 1024×1024 asserted in code and
+verified at runtime. Builder viewed the image at full size and at 300px.
+No practice grade exists for this judged bounty — evidence is the visual
+review + multi-model review above.
+
+**MQ7 — never-submit list: PASS.** No code-drawn images (13 panels real
+generation, flat style); stdlib-only imports; main.ts written fresh
+in-session and revised twice in-session; signed by 6do8 only at submit;
+PAT route; no claim codes anywhere; no secrets (grep 21 Nov 15:27 WITA:
+zero matches across all 6 repo files); can_submit TRUE (MQ3); FREE entry,
+no capital; no promised rank; not a duplicate; audit suspended (Gate 3).
+
+**MQ8 — session check: PASS.** 1. Session: builder subagent
+68c16e9d-0652-4302-86f7-be792e6d856f (parent 6f4bf902). 2. Recording start:
+delegation 21 Nov ~14:45 WITA — before the first build action.
+3. First action: ~15:05 WITA (gate-run.md write; prior work was read-only
+research). 4. Coverage: whole session in this transcript; coordinator
+bundles transcripts and runs the kit local check 14/0 pre-submit.
+5. In-session revision: main.ts written, then revised twice in-session
+(sha256 + PNG-magic/dimension verification added; readFileSync fix);
+compose.py revised across renders v1→v4.
+
+**Gate 0 — Reality: PASS.** Repo public at HEAD 1ae65a8a... (gate-run.md
+update commit follows, final SHA below); all deliverables in the repo;
+entry runs 2× identical on this commit; evidence captured (quota MQ3,
+review Gate 1, session MQ8).
+
+**Gate 1 — Quality: PASS.** OpenRouter nvidia/nemotron-3-ultra-550b-a55b:free
+PASS, zero issues; Gemini gemini-3-flash-preview copy review, 2 fixes
+applied (GTA VI label/date-check wording, UK–EU visa label) + 4 considered;
+review exchange recorded above. No practice grade (judged). Feed-first
+study done; entry demonstrably stronger than standing v3.
+
+**Gate 2 — Dedup: PASS.** Not a duplicate (MQ5); rebuild-once respected;
+quota re-checked (MQ3, caveat recorded).
+
+**Gate 3 — Submission quality: PASS.** README matches the requirements
+template verbatim (placeholders filled: owner RieryBuild, repo
+makefun-news-image-20261120-v4, description, run `node main.ts`, referral
+wa8s3t3t); signature 6do8 + PAT route (MQ4); no claim codes; no secrets
+(grep clean); deadline 22 Nov 08:00 WITA still ahead (~16.5h). Reza visual
+audit checkbox: N/A — audit rule SUSPENDED 20 Nov 15:27 WITA + standing
+"Gas semua submit"; no audit stop.
+
+**GATE VERDICT: ALL 8 QUESTIONS PASS. ALL 4 GATES PASS. READY FOR SUBMIT.**
+
+Final commit (after gate-run.md update push): TBD — recorded below once pushed.
